@@ -3,7 +3,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${URL}            https://www.saucedemo.com/
-${BROWSER}        Chrome
+${BROWSER}        headlesschrome
 ${USERNAME}       standard_user
 ${PASSWORD}       secret_sauce
 
