@@ -1,0 +1,28 @@
+# Node
+node_modules/
+package-lock.json
+
+# Robot Framework
+log.html
+report.html
+output.xml
+selenium-screenshot-*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+venv/
+.venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
