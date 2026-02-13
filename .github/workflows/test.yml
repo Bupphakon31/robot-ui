@@ -1,0 +1,44 @@
+name: Robot Framework Tests
+
+on:
+    push:
+        branches: [main, robot]
+    pull_request:
+        branches: [main]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: "3.11"
+
+            - name: Install dependencies
+              run: |
+                  pip install -r requirements.txt
+
+            - name: Install Chrome
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y google-chrome-stable
+
+            - name: Run Robot Framework tests
+              run: |
+                  robot testCases/
+              env:
+                  DISPLAY: :99
+
+            - name: Upload test results
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: robot-results
+                  path: |
+                      log.html
+                      report.html
+                      output.xml
