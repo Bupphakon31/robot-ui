@@ -1,0 +1,6 @@
+{
+    "title": "Secure Area",
+    "description": "Welcome to the Secure Area. When you are done click logout below.",
+    "logout_button": "Logout",
+    "message": "You logged into a secure area!"
+}

@@ -29,9 +29,7 @@ jobs:
 
             - name: Run Robot Framework tests
               run: |
-                  robot testCases/
-              env:
-                  DISPLAY: :99
+                  robot --variable BROWSER:headlesschrome testCases/flow/test.robot
 
             - name: Upload test results
               if: always()

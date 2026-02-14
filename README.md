@@ -1,37 +1,71 @@
-Robot Framework automation testing for Swag Labs demo site.
+# Robot Framework Automation Testing
+
+Robot Framework automation testing for login functionality demo site.
 
 ## Prerequisites
 
 - Python 3.11+
-- Node.js
 - Chrome browser
 
 ## Installation
 
 ```bash
 pip install -r requirements.txt
-npm install
 ```
 
 ## Running Tests
 
+### Robot Framework Tests
 ```bash
-npm test
+robot testCases/flow/test.robot
+```
+
+### Python Script (printY)
+```bash
+python testCases/printY/printY.py
 ```
 
 ## Project Structure
 
 ```
 robot-ui/
-├── testCases/          # Test cases
-├── resources/          # Test data and expected results
-├── support/            # Keywords and page objects
-├── configs/            # Configuration files
-└── .github/workflows/  # CI/CD workflows
+├── testCases/
+│   └── flow/
+│       └── test.robot              # Main test cases
+├── resources/
+│   ├── configs/
+│   │   └── import.resource         # Central import file
+│   ├── keywords/
+│   │   ├── common_keyword.resource # Common keywords (browser, JSON)
+│   │   ├── login_keyword.resource  # Login page keywords
+│   │   └── login_success_keyword.resource # Login success keywords
+│   ├── variables/
+│   │   ├── common_variables.resource # Common variables (URL, browser)
+│   │   ├── login_variables.resource # Login page locators
+│   │   └── login_success_variables.resource # Login success locators
+│   ├── expectedResult/
+│   │   ├── expected_login_page.json # Expected login page data
+│   │   └── expected_login_success_page.json # Expected success page data
+│   └── dataTest/
+│       └── login_page.json         # Test credentials
+└── .github/workflows/              # CI/CD workflows
 ```
+
+## Test Cases
+
+1. **Login and Logout successfully** - Test valid login and logout flow
+2. **Login failed with invalid username** - Test login with invalid username
+3. **Login failed with invalid password** - Test login with invalid password
+
+## Test Data
+
+- **Test credentials**: `resources/dataTest/login_page.json`
+- **Expected results**: `resources/expectedResult/`
+- **Page locators**: `resources/variables/`
 
 ## Test Reports
 
 After running tests, view results:
 - `log.html` - Detailed execution log
 - `report.html` - Test summary report
+- `output.xml` - XML output for CI/CD integration

@@ -1,0 +1,13 @@
+{
+    "title": "Login Page",
+    "description": "This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages.",
+    "username_label": "Username",
+    "password_label": "Password",
+    "login_button": "Login",
+    "message": {
+        "success": "You logged into a secure area!",
+        "invalid_username": "Your username is invalid!",
+        "invalid_password": "Your password is invalid!",
+        "logout": "You logged out of the secure area!"
+    }
+}

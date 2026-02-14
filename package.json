@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "robot testCases/",
+        "test": "robot testCases/flow",
+        "printY": "python testCases/printY/printY.py",
+        "report": "start report.html",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
         "prepare": "husky"
