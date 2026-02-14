@@ -1,6 +1,6 @@
 *** Settings ***
 
-Library        SeleniumLibrary
+Library        SeleniumLibrary    timeout=10s
 Library        Collections
 Library        BuiltIn
 Library        OperatingSystem
